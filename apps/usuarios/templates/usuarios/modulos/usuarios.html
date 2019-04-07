@@ -1,0 +1,67 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+{% if perms.usuarios %}
+	<div class="col-md-4">
+
+		<div class="box box-widget widget-user-2">
+
+			<div class="widget-user-header bg-blue">
+				<h3 class="widget-user-username">Módulo de usuarios</h3>
+				<h5 class="widget-user-desc">Gestión de usuarios</h5>
+			</div>
+
+			<div class="box-footer no-padding">
+				<ul class="nav nav-stacked">
+
+					{% if perms.usuarios.add_usuario %}
+						<li><a href="{% url 'usuarios:crear_usuario' %}">Crear usuario <span
+								class="pull-right badge bg-blue"><i class="fa fa-user-plus"></i></span></a></li>
+					{% endif %}
+
+					{% if 'usuarios.change_usuario' in perms %}
+						<li><a href="{% url 'usuarios:consultar_usuarios' %}">Consultar usuarios <span
+								class="pull-right badge bg-green"><i class="fa fa-search"></i></span></a></li>
+					{% endif %}
+
+					{% if perms.usuarios.add_cargo %}
+						<li><a href="{% url 'usuarios:crear_cargo' %}">Crear cargo <span
+								class="pull-right badge bg-blue"><i class="fa fa-users"></i></span></a></li>
+					{% endif %}
+
+					{% if perms.usuarios.view_cargos %}
+						<li><a href="{% url 'usuarios:consultar_cargos' %}">Consultar cargos <span
+								class="pull-right badge bg-green"><i class="fa fa-search"></i></span></a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+
+		<div class="box box-widget widget-user-2">
+
+			<div class="widget-user-header bg-red">
+				<h3 class="widget-user-username">Módulo de reportes</h3>
+				<h5 class="widget-user-desc">Gestión de reportes</h5>
+			</div>
+
+			<div class="box-footer no-padding">
+				<ul class="nav nav-stacked">
+
+
+						<li><a href="#">Crear reporte <span
+								class="pull-right badge bg-blue"><i class="fa fa-file-pdf-o"></i></span></a></li>
+
+						<li><a href="#">Consultar reportes <span
+								class="pull-right badge bg-green"><i class="fa fa-search"></i></span></a></li>
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<img src="{% static 'images/maestro-marcos.png' %}" alt="Maestro">
+	</div>
+{% endif %}
