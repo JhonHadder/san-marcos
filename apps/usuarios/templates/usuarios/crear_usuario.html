@@ -4,10 +4,10 @@
 
 {% block titulo_pagina %}Crear Usuarios{% endblock titulo_pagina %}
 {% block titulo %}Gestión de Usuarios{% endblock titulo %}
-{% block descripcion_pagina %} Gestiona los usuarios de ERPAdmin {% endblock descripcion_pagina %}
+{% block descripcion_pagina %} Gestiona los usuarios de CSM Admin {% endblock descripcion_pagina %}
 {% block miga_pan %}
 	<li><a href="{% url 'usuarios:home' %}"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
-	<li><a href="{% url 'usuarios:consultar_usuarios' %}"><i class="fa fa-dashboard"></i> GESTIÓN USUARIOS</a></li>
+	<li><a href="{% url 'usuarios:consultar_usuarios' %}"><i class="fa fa-users"></i> GESTIÓN USUARIOS</a></li>
 	<li class="active">CREAR USUARIOS</li>
 {% endblock miga_pan %}
 
